@@ -10,9 +10,9 @@ const router = express.Router();
  * PROFILE IMAGE STORING STARTS
  */
 const s3 = new aws.S3({
-	accessKeyId: 'xxx',
-	secretAccessKey: 'xxx',
-	Bucket: 'yourbucketname'
+	accessKeyId: "AKIAW4C7JQX3H6LNLEFW",
+	secretAccessKey: "6f2Bz0uUXtx8u+q/9fLScLAmhs8BDWBv6BBNfo/6",
+	Bucket: "neuralsight-data-bucket"
 });
 
 /**
@@ -21,7 +21,7 @@ const s3 = new aws.S3({
 const profileImgUpload = multer({
 	storage: multerS3({
 		s3: s3,
-		bucket: 'youbucketname',
+		bucket: "neuralsight-data-bucket",
 		acl: 'public-read',
 		key: function (req, file, cb) {
 			cb(null, path.basename( file.originalname, path.extname( file.originalname ) ) + '-' + Date.now() + path.extname( file.originalname ) )
@@ -41,7 +41,7 @@ const profileImgUpload = multer({
  */
 function checkFileType( file, cb ){
 	// Allowed ext
-	const filetypes = /jpeg|jpg|png|gif/;
+	const filetypes = /jpeg|jpg|png|dcm/;
 	// Check ext
 	const extname = filetypes.test( path.extname( file.originalname ).toLowerCase());
 	// Check mime

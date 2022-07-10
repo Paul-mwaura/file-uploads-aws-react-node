@@ -128,6 +128,7 @@ class Home extends Component {
 		console.log( this.state );
 		return(
 			<div className="container">
+			<h2>NeuralSight Image Collection Platform</h2>
 				{/* For Alert box*/}
 				<div id="oc-alert-container"></div>
 				{/* Single File Upload*/}
@@ -137,7 +138,7 @@ class Home extends Component {
 						<p className="text-muted" style={{ marginLeft: '12px' }}>Upload Size: 250px x 250px ( Max 2MB )</p>
 					</div>
 					<div className="card-body">
-						<p className="card-text">Please upload an image for your profile</p>
+						<p className="card-text">Please upload medical Images</p>
 						<input type="file" onChange={this.singleFileChangedHandler}/>
 						<div className="mt-5">
 							<button className="btn btn-info" onClick={this.singleFileUploadHandler}>Upload!</button>
@@ -151,13 +152,14 @@ class Home extends Component {
 						<p className="text-muted" style={{ marginLeft: '12px' }}>Upload Size: 400px x 400px ( Max 2MB )</p>
 					</div>
 					<div className="card-body">
-						<p className="card-text">Please upload the Gallery Images for your gallery</p>
+						<p className="card-text">Please upload medical Images</p>
 						<input type="file" multiple onChange={this.multipleFileChangedHandler}/>
 						<div className="mt-5">
 							<button className="btn btn-info" onClick={this.multipleFileUploadHandler}>Upload!</button>
 						</div>
 					</div>
 				</div>
+				<h3>Thank you for your kind Donation!!!</h3>
 			</div>
 		);
 	}
